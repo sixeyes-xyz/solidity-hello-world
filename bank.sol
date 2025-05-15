@@ -1,0 +1,19 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract Bank{
+  address public owner; // create address named owner
+  
+  constructor(){
+    owner = msg.sender; // initializes 'owner' to the deployer
+  }
+  receive() external payable{} // allows for payments to be accepted
+
+  function withDraw() public{
+    require(owner == msg.sender, "You aren't the owner"); // requires so that the receiver is the owner
+    payable(owner).transfer(account(this).balance);  // transfers withdrawal
+  }
+  function balance() public view returns (uint){ // function to view balance, returning a uint
+      return (account(this).balance); // returns balance
+  }
+}
