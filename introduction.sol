@@ -3,13 +3,13 @@ pragma solidity ^0.8.0;
 
 contract Intro{
   string public name;
-  uint age;
+  uint public age;
 
-  constructor(string memory _name, uint _age){ //initialize 'age' and 'name' as parameters (note: uint is automatically:
+  constructor(string memory _name, uint _age){ //initialize 'age' and 'name' as parameters (note: uint is automatically: 256
     age = _age;
     name = _name;
   }
-  function decadeLater() public view returns(uint){ //function 'DecadeLater" adds age inputted + 10 
+  function decadeLater() public view returns(uint){ //function 'decadeLater" adds age inputted + 10 
     return age + 10; 
   }
 }
