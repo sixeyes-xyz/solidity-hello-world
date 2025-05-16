@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract bank{
+contract Bank{
   address public owner; // create address named owner
   
   constructor(){
