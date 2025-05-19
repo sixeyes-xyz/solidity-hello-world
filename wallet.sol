@@ -5,7 +5,7 @@ contract Wallet{
   mapping(address => uint) public balances; // stores balances
   
   receive() external payable{
-    balances[msg.sender] += msg.value; adds to user's value
+    balances[msg.sender] += msg.value; // adds to user's value
   }
 
 
