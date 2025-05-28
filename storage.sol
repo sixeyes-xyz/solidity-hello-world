@@ -10,7 +10,10 @@ pragma solidity ^0.8.2; //stating version of the solidity compiler used to compi
 
     Person[] public listOfPeople;
 
+    mapping(string => uint256) public searchName; // points string (names) to uint256 (favorite numbers)
+
     function pushPerson(string memory _name, uint256 _favoriteNumber) public{   // define local variables
-        listofPeople.push(Person(_favoriteNumber, _name));      //push people into my 'listOfPeople'
+        listOfPeople.push(Person(_favoriteNumber, _name));      //push people into my 'listOfPeople'
+        searchName[_name] = _favoriteNumber; // allows it so when you search name it shows their favorite number
     }
  } 
